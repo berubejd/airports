@@ -1,0 +1,85 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "airports"
+version = "0.1.0"
+authors = [
+    { name = "Jeffrey Beruber", email = "berubejd@gmail.com" },
+]
+description = "A comprehensive Python library for airport data management and querying heavily influenced by Tim Rogers' Airports gem. This library provides fast, efficient lookups for airport information using IATA codes, ICAO codes, cities, regions, and countries."
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["airports", "travel", "aviation"]
+license = { file = "LICENSE.txt" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "isort>=5.0.0",
+    "flake8>=4.0.0",
+    "build>=0.10.0",
+    "twine>=4.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/berubejd/airports"
+"Bug Tracker" = "https://github.com/berubejd/airports/issues"
+"Source Code" = "https://github.com/berubejd/airports"
+
+[tool.pytest]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+pythonpath = "."
+
+[tool.coverage.run]
+source = ["airports"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "def __repr__",
+    "if __name__ == .__main__.:",
+]
+ignore_errors = true
+omit = [
+    "tests/*",
+    "merge.py",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+exclude = [
+    "venv",
+    "venv/*",
+    ".venv",
+    ".venv/*",
+    "env",
+    "env/*",
+    ".env",
+    ".env/*",
+    ".git",
+    "__pycache__",
+    "build",
+    "dist"
+]
