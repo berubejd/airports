@@ -4,9 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "airports"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
-    { name = "Jeffrey Beruber", email = "berubejd@gmail.com" },
+    { name = "Jeffrey Berube", email = "berubejd@gmail.com" },
 ]
 description = "A comprehensive Python library for airport data management and querying heavily influenced by Tim Rogers' Airports gem. This library provides fast, efficient lookups for airport information using IATA codes, ICAO codes, cities, regions, and countries."
 readme = "README.md"
